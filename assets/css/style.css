@@ -1758,64 +1758,54 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* Header brand text override */
+/* Final header readability fix */
 .logo-link {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-width: 0;
-}
-
-.logo-img {
-  height: 68px;
-  width: auto;
-  display: block;
-  flex-shrink: 0;
+  gap: 14px !important;
 }
 
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1;
-  white-space: nowrap;
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  white-space: nowrap !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.40) !important;
 }
 
-.logo-text-top {
-  font-family: var(--font-heading);
-  font-size: 1.30rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #ffffff;
+.logo-text-top,
+.logo-text-bottom {
+  font-family: var(--font-heading) !important;
+  font-size: 1.34rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #ffffff !important;
+  margin-top: 0 !important;
+  line-height: 1 !important;
 }
 
 .logo-text-bottom {
-  font-family: var(--font-heading);
-  font-size: 1.04rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.92);
-  margin-top: 3px;
+  color: rgba(255,255,255,0.94) !important;
 }
 
 .main-nav a {
-  display: block;
-  padding: 8px 10px;
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.82);
-  border-radius: var(--radius);
-  transition: color 0.15s, background 0.15s;
+  padding: 8px 8px !important;
+  font-size: 0.78rem !important;
 }
 
-@media (max-width: 1180px) {
+.header-phone {
+  padding: 8px 10px !important;
+  font-size: 0.84rem !important;
+}
+
+@media (max-width: 1260px) {
+  .header-phone {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1080px) {
   .logo-text {
-    display: none;
+    display: none !important;
   }
 }
