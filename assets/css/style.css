@@ -1524,6 +1524,9 @@ h1, h2, h3, h4, h5 {
    Responsive - 1024px
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
+  .logo-text {
+    display: none;
+  }
   .logo-text { display: none; }
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
