@@ -1,5 +1,5 @@
 /* ============================================================
-   D&D Roofing & Construction — Main Stylesheet
+   D&D Roofing & Construction â€” Main Stylesheet
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .logo-img {
-  height: 48px;
+  height: 56px;
   width: auto;
   display: block;
 }
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5 {
 
 .service-icon {
   width: 48px;
-  height: 48px;
+  height: 56px;
   color: var(--color-accent);
 }
 
@@ -778,7 +778,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer-logo {
-  height: 44px;
+  height: 50px;
   width: auto;
   margin-bottom: 16px;
   opacity: 0.92;
@@ -958,7 +958,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .service-list li::before {
-  content: '✓';
+  content: 'âœ“';
   color: var(--color-accent);
   font-weight: 700;
   flex-shrink: 0;
@@ -1265,7 +1265,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .sidebar-card li::before {
-  content: '›';
+  content: 'â€º';
   position: absolute;
   left: 0;
   color: var(--color-accent-light);
@@ -1521,7 +1521,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ------------------------------------------------------------
-   Responsive — 1024px
+   Responsive â€” 1024px
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
   .services-grid {
@@ -1597,7 +1597,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ------------------------------------------------------------
-   Responsive — 768px (mobile)
+   Responsive â€” 768px (mobile)
    ------------------------------------------------------------ */
 @media (max-width: 768px) {
   .main-nav {
