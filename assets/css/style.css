@@ -1,5 +1,5 @@
 /* ============================================================
-   D&D Roofing & Construction Ã¢â‚¬â€ Main Stylesheet
+   D&D Roofing & Construction ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Main Stylesheet
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -29,7 +29,7 @@
   --shadow-md: 0 4px 24px rgba(0,0,0,0.14);
 
   --max-width: 1140px;
-  --header-height: 70px;
+  --header-height: 88px;
 }
 
 /* ------------------------------------------------------------
@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .logo-img {
-  height: 56px;
+  height: 68px;
   width: auto;
   display: block;
 }
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5 {
 
 .service-icon {
   width: 48px;
-  height: 56px;
+  height: 68px;
   color: var(--color-accent);
 }
 
@@ -778,7 +778,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer-logo {
-  height: 50px;
+  height: 58px;
   width: auto;
   margin-bottom: 16px;
   opacity: 0.92;
@@ -958,7 +958,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .service-list li::before {
-  content: 'Ã¢Å“â€œ';
+  content: 'ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“';
   color: var(--color-accent);
   font-weight: 700;
   flex-shrink: 0;
@@ -1265,7 +1265,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .sidebar-card li::before {
-  content: 'Ã¢â‚¬Âº';
+  content: 'ÃƒÂ¢Ã¢â€šÂ¬Ã‚Âº';
   position: absolute;
   left: 0;
   color: var(--color-accent-light);
@@ -1521,7 +1521,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ------------------------------------------------------------
-   Responsive Ã¢â‚¬â€ 1024px
+   Responsive ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 1024px
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
   .services-grid {
@@ -1597,7 +1597,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ------------------------------------------------------------
-   Responsive Ã¢â‚¬â€ 768px (mobile)
+   Responsive ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 768px (mobile)
    ------------------------------------------------------------ */
 @media (max-width: 768px) {
   .main-nav {
