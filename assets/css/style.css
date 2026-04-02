@@ -1,5 +1,5 @@
 /* ============================================================
-   D&D Roofing & Construction â€” Main Stylesheet
+   D&D Roofing & Construction Ã¢â‚¬â€ Main Stylesheet
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -958,7 +958,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .service-list li::before {
-  content: 'âœ“';
+  content: 'Ã¢Å“â€œ';
   color: var(--color-accent);
   font-weight: 700;
   flex-shrink: 0;
@@ -1265,7 +1265,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .sidebar-card li::before {
-  content: 'â€º';
+  content: 'Ã¢â‚¬Âº';
   position: absolute;
   left: 0;
   color: var(--color-accent-light);
@@ -1521,7 +1521,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ------------------------------------------------------------
-   Responsive â€” 1024px
+   Responsive Ã¢â‚¬â€ 1024px
    ------------------------------------------------------------ */
 @media (max-width: 1024px) {
   .services-grid {
@@ -1597,7 +1597,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ------------------------------------------------------------
-   Responsive â€” 768px (mobile)
+   Responsive Ã¢â‚¬â€ 768px (mobile)
    ------------------------------------------------------------ */
 @media (max-width: 768px) {
   .main-nav {
