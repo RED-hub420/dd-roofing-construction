@@ -1809,3 +1809,31 @@ h1, h2, h3, h4, h5 {
     display: none !important;
   }
 }
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.instagram-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #833ab4 0%, #e1306c 55%, #f77737 100%);
+  color: var(--color-white);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: filter 0.15s ease;
+}
+
+.instagram-cta:hover {
+  filter: brightness(0.96);
+}
