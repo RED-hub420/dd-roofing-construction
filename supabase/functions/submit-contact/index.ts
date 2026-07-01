@@ -117,7 +117,7 @@ function escapeHtml(value: string) {
 
 function formatBusinessFrom() {
   const businessName = Deno.env.get("BUSINESS_NAME") || "D&D Roofing & Construction";
-  const fromEmail = Deno.env.get("RESEND_FROM_EMAIL") || "notify@ddconstructiontx.com";
+  const fromEmail = Deno.env.get("BREVO_FROM_EMAIL") || Deno.env.get("RESEND_FROM_EMAIL") || "notify@ddconstructiontx.com";
   return `${businessName} <${fromEmail}>`;
 }
 
@@ -247,27 +247,33 @@ async function sendEmail(input: {
   replyTo?: string;
   idempotencyKey: string;
 }) {
-  const resendApiKey = Deno.env.get("RESEND_API_KEY");
-  if (!resendApiKey) throw new Error("Missing RESEND_API_KEY secret.");
+  const brevoApiKey = Deno.env.get("BREVO_API_KEY");
+  if (!brevoApiKey) throw new Error("Missing BREVO_API_KEY secret.");
 
   const body: Record<string, unknown> = {
-    from: formatBusinessFrom(),
-    to: [input.to],
+    sender: {
+      name: Deno.env.get("BUSINESS_NAME") || "D&D Roofing & Construction",
+      email: Deno.env.get("BREVO_FROM_EMAIL") || Deno.env.get("RESEND_FROM_EMAIL") || "notify@ddconstructiontx.com",
+    },
+    to: [{ email: input.to }],
     subject: input.subject,
-    html: input.html,
-    text: input.text,
+    htmlContent: input.html,
+    textContent: input.text,
+    headers: {
+      "X-Entity-Ref-ID": input.idempotencyKey,
+    },
   };
 
   if (input.replyTo) {
-    body.reply_to = [input.replyTo];
+    body.replyTo = { email: input.replyTo };
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${resendApiKey}`,
+      "api-key": brevoApiKey,
       "Content-Type": "application/json",
-      "Idempotency-Key": input.idempotencyKey,
+      Accept: "application/json",
     },
     body: JSON.stringify(body),
   });
@@ -275,10 +281,16 @@ async function sendEmail(input: {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    throw new Error(typeof data?.message === "string" ? data.message : "Resend email failed.");
+    const message =
+      typeof data?.message === "string"
+        ? data.message
+        : typeof data?.error === "string"
+          ? data.error
+          : "Brevo email failed.";
+    throw new Error(message);
   }
 
-  return data as { id?: string };
+  return { id: data?.messageId || data?.messageUuid || data?.id || null } as { id?: string | null };
 }
 
 Deno.serve(async (req) => {
@@ -357,7 +369,7 @@ Deno.serve(async (req) => {
         idempotencyKey: `contact-business-${row.id}`,
       });
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Resend email failed.";
+      const message = error instanceof Error ? error.message : "Brevo email failed.";
       await updateEmailStatus(row.id, {
         email_status: "failed",
         email_error: message.slice(0, 1000),
