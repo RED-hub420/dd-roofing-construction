@@ -1,0 +1,4 @@
+project_id = "dd-roofing-construction"
+
+[functions.submit-contact]
+verify_jwt = false
